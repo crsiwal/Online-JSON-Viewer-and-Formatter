@@ -13,7 +13,18 @@ import About from "./About";
 const App = () => {
   const [key, setKey] = useState("text");
 
-  const [jsonInput, setJsonInput] = useState(`console.log("JavaScript Object Notation")`);
+  const [jsonInput, setJsonInput] = useState(`{
+   "firstName": "Rahul",
+   "lastName": "Siwal",
+   "gender": "man",
+   "age": 34,
+   "address": {
+      "streetAddress": "21 2nd Street",
+      "city": "Noida",
+      "state": "UP",
+      "postalCode": "201013"
+   }
+}`);
   const [error, setError] = useState(null);
 
   const [viewerJsonData, setViewerJsonData] = useState(null);
@@ -77,7 +88,7 @@ const App = () => {
           setViewerJsonData(JSON.parse(jsonInput));
           setViewerError(null);
         } catch (err) {
-          setViewerError("Invalid JSON");
+          setViewerError("JSON Error: Invalid JSON variable");
           setViewerJsonData(null);
         }
         break;
@@ -94,6 +105,13 @@ const App = () => {
           <Tab eventKey="viewer" title="Viewer">
             <div className="p-4" style={{ height: `${height - 50}px`, width: "100%", overflowY: "auto" }}>
               {viewerJsonData && <JsonView theme="vscode" displaySize="collapsed" collapsed={1} enableClipboard={true} src={viewerJsonData} />}
+              {viewerError && (
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 text-danger py-1">{viewerError}</div>
+                  </div>
+                </div>
+              )}
             </div>
           </Tab>
           <Tab eventKey="text" title="Text">
