@@ -166,7 +166,7 @@ const App = () => {
       </div>
       <About />
       <footer className="py-3 border-top ps-3 bg-light">
-        <span className="text-muted">© 2024 Company, Inc</span>
+        <span className="text-muted">© {new Date().getFullYear()} RSIWAL</span>
       </footer>
     </>
   );
