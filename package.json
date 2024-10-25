@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "codemirror": "^5.65.18",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-codemirror2": "^8.0.0",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "bootstrap": "^5.3.3",
-    "react-bootstrap": "^2.10.5",
-    "codemirror": "^5.65.18",
-    "react-codemirror2": "^8.0.0",
     "react18-json-view": "^0.2.8"
   },
   "scripts": {

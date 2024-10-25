@@ -134,7 +134,7 @@ const App = () => {
                 </a>
               </div>
             </div>
-            <div style={{ height: `${height - 150}px`, width: "100%" }}>
+            <div style={{ height: `${height - (error ? 110 : 70)}px`, width: "100%" }}>
               <CodeMirror
                 onBeforeChange={handleJsonInputChange}
                 value={jsonInput}
@@ -155,9 +155,9 @@ const App = () => {
               />
             </div>
             {error && (
-              <div className="container">
+              <div className="container-fluid">
                 <div className="row">
-                  <div className="col-12 text-danger py-1">{error}</div>
+                  <div className="col-12 text-white bg-danger py-1">{error}</div>
                 </div>
               </div>
             )}
